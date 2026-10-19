@@ -10,6 +10,16 @@ Existe para que Payoneer y eBay tengan una URL del negocio con contacto y servic
   (`logo.svg` sobre blanco, `logo-blanco.svg` en el footer grafito, `favicon.svg` = icono). `og.png` 1200x630.
 - `CNAME` = `digidieselrd.com` (GitHub Pages). `.nojekyll` para servir tal cual.
 
+## Hosting y DNS
+
+- GitHub Pages del repo público `geurys/digidiesel-web`, rama `main`, raíz. Publicar = `git push` (token en
+  `.secrets\github.env`); Pages reconstruye solo en ~1 min. Custom domain `digidieselrd.com`, HTTPS forzado.
+- Cloudflare (zona `digidieselrd.com`, todo DNS only): apex y `www` = 4 registros A cada uno a
+  `185.199.108-111.153`. **`www` va con A, no CNAME**: `www` tiene MX de Fastmail y un CNAME no puede convivir
+  con ellos. No tocar MX/DKIM/SPF/DMARC/SRV/`mail`/wildcards (correo Fastmail) ni `ecf` (túnel del receptor e-CF).
+- El panel de Cloudflare no acepta escrituras por `fetch` a su API interna (devuelve HTML); editar por la UI.
+- Estado de Pages: `gh api repos/geurys/digidiesel-web/pages` y `.../pages/health`.
+
 ## Reglas de contenido
 
 - **Sin deletes ni eufemismos** (EGR/DPF/AdBlue, "off-road", "emissions solutions"): eBay prohíbe esos
