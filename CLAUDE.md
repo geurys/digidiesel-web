@@ -14,7 +14,7 @@ Existe para que Payoneer y eBay tengan una URL del negocio con contacto y servic
 
 - **Sin deletes ni eufemismos** (EGR/DPF/AdBlue, "off-road", "emissions solutions"): eBay prohíbe esos
   servicios y Payoneer puede congelar fondos. Lo que diga el sitio tiene que coincidir con los anuncios de eBay.
-- Contacto = los mismos datos de las facturas (`BUSINESS_*` del `.env` de Control de Pagos). No publicar el RNC
+- Contacto público: WhatsApp 829-981-6974, `contacto@digidieselrd.com` (alias Fastmail), solo "Bonao, RD" (sin calle, decisión de Geurys). No publicar el RNC
   (es la cédula). Cualquier cambio de teléfono/correo/dirección se hace en las dos páginas y en el JSON-LD.
 - Paleta de marca: naranja `#E8491D`, tinta `#2E3238`; estilo sobrio.
 
