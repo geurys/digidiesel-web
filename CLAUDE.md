@@ -19,6 +19,10 @@ Existe para que Payoneer y eBay tengan una URL del negocio con contacto y servic
   con ellos. No tocar MX/DKIM/SPF/DMARC/SRV/`mail`/wildcards (correo Fastmail) ni `ecf` (túnel del receptor e-CF).
 - El panel de Cloudflare no acepta escrituras por `fetch` a su API interna (devuelve HTML); editar por la UI.
 - Estado de Pages: `gh api repos/geurys/digidiesel-web/pages` y `.../pages/health`.
+- Certificado Let's Encrypt (apex + www) emitido por GitHub, se renueva solo. Gotcha: tras cambiar el DNS pasó
+  1 h sin emitirse (`https_certificate: null`); lo destrabó quitar y volver a poner el dominio
+  (`PUT .../pages -F cname=null` y luego `-f cname=digidieselrd.com`). Eso crea commits "Delete/Create CNAME"
+  en `main` del remoto: hacer `git pull` antes del siguiente push.
 
 ## Reglas de contenido
 
