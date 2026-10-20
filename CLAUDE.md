@@ -17,7 +17,11 @@ Existe para que Payoneer y eBay tengan una URL del negocio con contacto y servic
 - Cloudflare (zona `digidieselrd.com`, todo DNS only): apex y `www` = 4 registros A cada uno a
   `185.199.108-111.153`. **`www` va con A, no CNAME**: `www` tiene MX de Fastmail y un CNAME no puede convivir
   con ellos. No tocar MX/DKIM/SPF/DMARC/SRV/`mail`/wildcards (correo Fastmail) ni `ecf` (túnel del receptor e-CF).
+- Dominio **verificado en la cuenta GitHub** `geurys` (Settings → Pages): TXT
+  `_github-pages-challenge-geurys` en Cloudflare. No borrarlo; impide que otra cuenta publique Pages en el dominio.
 - El panel de Cloudflare no acepta escrituras por `fetch` a su API interna (devuelve HTML); editar por la UI.
+  Si el ícono de 1Password se abre en un campo, la extensión de Chrome pierde el teclado: llenar los campos con
+  el setter nativo de `value` + evento `input` por JavaScript, sin enfocarlos.
 - Estado de Pages: `gh api repos/geurys/digidiesel-web/pages` y `.../pages/health`.
 - Certificado Let's Encrypt (apex + www) emitido por GitHub, se renueva solo. Gotcha: tras cambiar el DNS pasó
   1 h sin emitirse (`https_certificate: null`); lo destrabó quitar y volver a poner el dominio
